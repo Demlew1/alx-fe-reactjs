@@ -1,5 +1,5 @@
 import ProfilePage from "./components/ProfilePage";
-import myContext from "./components/UserContext";
+import UserContext from "./components/UserContext";
 
 function App() {
   const userData = {
@@ -9,9 +9,9 @@ function App() {
   };
 
   return (
-    <myContext.Provider value={{ userData }}>
+    <UserContext.Provider value={{ userData }}>
       <ProfilePage />
-    </myContext.Provider>
+    </UserContext.Provider>
   );
 }
 
