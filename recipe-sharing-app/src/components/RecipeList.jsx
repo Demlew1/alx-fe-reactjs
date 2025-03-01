@@ -2,13 +2,16 @@ import { useRecipeStore } from "./recipeStore";
 export default function RecipeList() {
   const recipes = useRecipeStore((state) => state.recipes);
   return (
-    <div>
+    <div className="overflow-y-scroll p-8 h-100">
       {recipes.map((recipe) => (
-        <div className="" key={recipe.id}>
-          <h3 className="font-bold text-gray-700 capitalize mb-0.5">
+        <div
+          className=" border-2 my-2 border-gray-300 p-2 rounded-md"
+          key={recipe.id}
+        >
+          <h3 className="font-bold  text-gray-700  capitalize mb-0.5">
             {recipe.title}
           </h3>
-          <p className="text-gray-500">{recipe.description}</p>
+          <p className="text-gray-500 text-xs">{recipe.description}</p>
         </div>
       ))}
     </div>
