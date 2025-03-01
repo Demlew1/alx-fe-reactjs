@@ -11,19 +11,26 @@ export default function AddRecipeForm() {
     setDescription("");
   }
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
       <input
         type="text"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
-        placeHolder="Title"
+        placeHolder="Enter Your Title"
+        className="border-1 border-gray-300 inline-block p-2 rounded-md text-center"
       />
       <textarea
         value={description}
         onChange={(e) => setDescription(e.target.value)}
         placeholder="Description"
+        className="border-gray-200 border-1 rounded-md p-8 "
       />
-      <button type="submit">Add Recipe</button>
+      <button
+        className="bg-amber-600 p-2 font-bold text-gray-100 rounded-lg hover:bg-amber-200 hover:text-gray-600"
+        type="submit"
+      >
+        Add Recipe
+      </button>
     </form>
   );
 }

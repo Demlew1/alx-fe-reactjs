@@ -4,9 +4,11 @@ export default function RecipeList() {
   return (
     <div>
       {recipes.map((recipe) => (
-        <div key={recipe.id}>
-          <h3>{recipe.title}</h3>
-          <p>{recipe.description}</p>
+        <div className="" key={recipe.id}>
+          <h3 className="font-bold text-gray-700 capitalize mb-0.5">
+            {recipe.title}
+          </h3>
+          <p className="text-gray-500">{recipe.description}</p>
         </div>
       ))}
     </div>
