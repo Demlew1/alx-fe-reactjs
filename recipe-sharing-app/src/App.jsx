@@ -1,12 +1,19 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import RecipeList from "./components/RecipeList";
 import AddRecipeForm from "./components/AddRecipeForm";
+import RecipeDetails from "./components/RecipeDetails";
 
 function App() {
   return (
-    <div className=" flex flex-row justify-center items-center h-screen gap-24 ">
-      <AddRecipeForm />
-      <RecipeList />
-    </div>
+    <Router>
+      <div className="flex flex-row justify-center items-center h-screen gap-24">
+        <Routes>
+          <Route path="/" element={<RecipeList />} />
+          <Route path="/recipe/:recipeId" element={<RecipeDetails />} />
+        </Routes>
+        <AddRecipeForm />
+      </div>
+    </Router>
   );
 }
 
