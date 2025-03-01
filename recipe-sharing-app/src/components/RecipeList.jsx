@@ -12,6 +12,7 @@ export default function RecipeList() {
             {recipe.title}
           </h3>
           <p className="text-gray-500 text-xs">{recipe.description}</p>
+          <RecipeDetails recipeId={recipe.id} />
         </div>
       ))}
     </div>

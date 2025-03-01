@@ -16,7 +16,7 @@ export default function AddRecipeForm() {
         type="text"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
-        placeHolder="Enter Your Title"
+        placeholder="Enter Your Title"
         className="border-1 border-gray-300 inline-block p-2 rounded-md text-center"
       />
       <textarea
@@ -26,7 +26,7 @@ export default function AddRecipeForm() {
         className="border-gray-200 border-1 rounded-md p-8 "
       />
       <button
-        className="bg-amber-600 p-2 font-bold text-gray-100 rounded-lg hover:bg-amber-200 hover:text-gray-600"
+        className="bg-amber-600 p-2 font-bold text-gray-100 rounded-lg hover:bg-amber-2 00 hover:text-gray-600"
         type="submit"
       >
         Add Recipe
