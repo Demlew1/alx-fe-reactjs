@@ -14,6 +14,12 @@ export default function DeleteRecipeButton({ recipeId, onDelete }) {
       navigate("/");
     }
   }
-
-  return <button onClick={handleRecipeButton}>Delete</button>;
+  return (
+    <button
+      className="bg-red-500 cursor-pointer p-2 mt-2 text-xs rounded-sm font-bold text-gray-100 hover:bg-red-400"
+      onClick={handleRecipeButton}
+    >
+      Delete
+    </button>
+  );
 }

@@ -12,11 +12,17 @@ export default function RecipeDetails() {
 
   if (!recipe) return <p className="text-red-500">Recipe not found</p>;
 
+  const handleUpdateSuccess = () => {
+    navigate("/");
+  };
+
   return (
-    <div>
-      <h1>{recipe.title}</h1>
-      <p>{recipe.description}</p>
-      <EditRecipeForm recipe={recipe} />
+    <div className="border-2 my-2 text-center border-gray-300 p-2 rounded-md">
+      <div className="p-2 border-1 border-gray-500 mb-4">
+        <h1 className="font-bold capitalize">{recipe.title}</h1>
+        <p className="text-xs mt-2">{recipe.description}</p>
+      </div>
+      <EditRecipeForm recipe={recipe} onSuccess={handleUpdateSuccess} />
       <DeleteRecipeButton recipeId={recipe.id} onDelete={() => navigate("/")} />
     </div>
   );

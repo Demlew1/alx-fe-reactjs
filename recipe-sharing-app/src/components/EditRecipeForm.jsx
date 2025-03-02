@@ -1,18 +1,21 @@
 import { useState } from "react";
 import { useRecipeStore } from "./recipeStore";
 
-export default function EditRecipeForm({ recipe }) {
+export default function EditRecipeForm({ recipe, onSuccess }) {
   const updateRecipe = useRecipeStore((state) => state.updateRecipe);
   const [title, setTitle] = useState(recipe.title);
   const [description, setDescription] = useState(recipe.description);
+  const [error, setError] = useState("");
 
   function handleSubmit(event) {
     event.preventDefault();
     if (!title || !description) {
-      alert("Title and description cannot be empty");
+      setError("Title and description cannot be empty");
       return;
     }
+    setError("");
     updateRecipe({ id: recipe.id, title, description });
+    onSuccess(); // Call the onSuccess callback after updating
   }
 
   return (
@@ -30,9 +33,10 @@ export default function EditRecipeForm({ recipe }) {
         placeholder="Description"
         className="border-gray-200 border-1 rounded-md p-8"
       />
+      {error && <p className="text-red-500">{error}</p>}
       <button
         type="submit"
-        className="bg-green-600 p-2 font-bold text-gray-100 rounded-lg hover:bg-green-200 hover:text-gray-600"
+        className="bg-green-600 cursor-pointer p-2 font-bold text-gray-100 rounded-lg hover:bg-green-200 hover:text-gray-600"
       >
         Update
       </button>

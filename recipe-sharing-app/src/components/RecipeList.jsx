@@ -3,6 +3,7 @@ import { useRecipeStore } from "./recipeStore";
 
 export default function RecipeList() {
   const recipes = useRecipeStore((state) => state.recipes);
+  console.log("Recipes in RecipeList:", recipes);
 
   return (
     <div className="overflow-y-scroll p-8 h-100">
