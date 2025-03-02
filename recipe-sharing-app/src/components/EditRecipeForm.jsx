@@ -15,7 +15,7 @@ export default function EditRecipeForm({ recipe, onSuccess }) {
     }
     setError("");
     updateRecipe({ id: recipe.id, title, description });
-    onSuccess(); // Call the onSuccess callback after updating
+    onSuccess();
   }
 
   return (
