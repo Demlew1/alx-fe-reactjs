@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import { useRecipeStore } from "./recipeStore";
 
-const FavouriteList = () => {
+const FavoritesList = () => {
   const favorites = useRecipeStore((state) => state.favorites);
   const recipes = useRecipeStore((state) => state.recipes);
 
@@ -30,4 +30,4 @@ const FavouriteList = () => {
   );
 };
 
-export default FavouriteList;
+export default FavoritesList;
