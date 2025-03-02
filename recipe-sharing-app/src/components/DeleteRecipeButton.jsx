@@ -1,7 +1,7 @@
 import { useRecipeStore } from "./recipeStore";
 
 export default function DeleteRecipeButton({ recipeId, onDelete }) {
-  const deleteRecipe = useRecipeStore((state) => state.DeleteRecipe);
+  const deleteRecipe = useRecipeStore((state) => state.deleteRecipe);
 
   function handleRecipeButton(e) {
     e.preventDefault();
