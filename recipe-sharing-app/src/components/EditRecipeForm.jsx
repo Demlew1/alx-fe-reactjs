@@ -6,8 +6,8 @@ export default function EditRecipeForm({ recipe }) {
   const [title, setTitle] = useState(recipe.title);
   const [description, setDescription] = useState(recipe.description);
 
-  function handleSubmit(e) {
-    e.preventDefault();
+  function handleSubmit(event) {
+    event.preventDefault();
     if (!title || !description) {
       alert("Title and description cannot be empty");
       return;
