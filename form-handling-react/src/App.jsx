@@ -1,5 +1,5 @@
-import RegistrationForm from "./Components/RegistrationForm";
-import FormikForm from "./Components/FormikForm";
+import RegistrationForm from "./components/RegistrationForm";
+import FormikForm from "./components/FormikForm";
 
 const App = () => {
   return (
