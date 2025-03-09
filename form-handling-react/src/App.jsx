@@ -1,13 +1,14 @@
-import FormikForm from "./components/formikForm";
 import RegistrationForm from "./components/RegistrationForm";
+import FormikForm from "./components/formikForm";
 
-function App() {
+const App = () => {
   return (
-    <>
+    <div>
       <RegistrationForm />
+
       <FormikForm />
-    </>
+    </div>
   );
-}
+};
 
 export default App;
