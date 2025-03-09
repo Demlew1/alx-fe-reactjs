@@ -3,7 +3,7 @@ function RegistrationForm() {
   const [formValue, setFormValue] = useState({
     name: "",
     email: "",
-    passWord: "",
+    password: "",
   });
   const [error, setError] = useState({});
 
@@ -11,7 +11,7 @@ function RegistrationForm() {
     const newErrors = {};
     if (!formValue.name) newErrors.name = "Name is required";
     if (!formValue.email) newErrors.email = "Email is required";
-    if (!formValue.passWord) newErrors.password = "Password is required";
+    if (!formValue.password) newErrors.password = "Password is required";
     return newErrors;
   }
   function handleChange(e) {
@@ -64,8 +64,8 @@ function RegistrationForm() {
             onChange={handleChange}
             value={formValue.passWord}
             name="password"
-            type="text"
-            placeholder="Your Name"
+            type="password"
+            placeholder="Your Password"
           />
           {error.password && <p>{error.password}</p>}
         </div>
