@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 
-const fetchData = async () => {
+const fetchPosts = async () => {
   const response = await fetch("https://jsonplaceholder.typicode.com/posts");
   if (!response.ok) throw new Error("Failed to fetch the data");
   return response.json();
@@ -10,7 +10,7 @@ const fetchData = async () => {
 function PostsComponent() {
   const { data, isLoading, error, refetch, isError, isFetching } = useQuery({
     queryKey: ["posts"],
-    queryFn: fetchData,
+    queryFn: fetchPosts,
     staleTime: 10000, // Data stays fresh for 10 seconds
     cacheTime: 1000 * 60 * 5, // Cached for 5 minutes
     refetchOnWindowFocus: true,
